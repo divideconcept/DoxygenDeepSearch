@@ -26,10 +26,10 @@ If you need to automate this in a script:
 
 ### BATCH
 
-copy /y search.js html/search/search.js
+copy /y search.js html/search/search.js  
 type searchdata.xml >> html/search.html
 
 ### BASH
 
-cp search.js html/search/search.js
+cp search.js html/search/search.js  
 cat searchdata.xml >> html/search.html
