@@ -17,7 +17,7 @@ SERVER_BASED_SEARCH
 EXTERNAL_SEARCH
 
 This will generate a searchdata.xml file.  
-Append the content of that file at the end of html/search.html.  
+Append <script id="searchdata" type="text/xmldata"> to the content of html/search.html, then paste the content of searchdata.xml, and end with </script>.
 Replace html/search/search.js by Doxygen Deep Search search.js.
 
 That's it !
@@ -27,9 +27,13 @@ If you need to automate this in a script:
 ### BATCH
 
 copy /y search.js html/search/search.js  
-type searchdata.xml >> html/search.html
+echo ^<script id="searchdata" type="text/xmldata"^> >> html/search.html  
+type searchdata.xml >> html/search.html  
+echo ^</script^> >> html/search.html
 
 ### BASH
 
 cp search.js html/search/search.js  
-cat searchdata.xml >> html/search.html
+echo "<script id=\"searchdata\" type=\"text/xmldata\">" >> html/search.html  
+cat searchdata.xml >> html/search.html  
+echo "</script>" >> html/search.html
