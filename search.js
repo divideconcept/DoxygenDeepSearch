@@ -62,10 +62,10 @@ function searchFor(query,page,count) {
         return;
     }
 
-    var xmlData=document.documentElement.outerHTML;
+    var xmlData=document.getElementById('searchdata').innerHTML;
     if(xmlData.indexOf("<add>")<0)
     {
-        alert("Append the content of searchdata.xml at the end of search.html.\n\nsearchdata.xml is generated when SERVER_BASED_SEARCH and EXTERNAL_SEARCH options are enabled.");
+        alert("Append <script id=\"searchdata\" type=\"text/xmldata\"> to the content of search.html, then the content of searchdata.xml, and end by </script>.\n\nsearchdata.xml is generated when SEARCHENGINE, SERVER_BASED_SEARCH and EXTERNAL_SEARCH options are enabled.");
         return;
     }
     xmlData=xmlData.substring(xmlData.indexOf("<add>"),xmlData.indexOf("</add>")+6);
