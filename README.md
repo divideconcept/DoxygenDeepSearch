@@ -27,13 +27,13 @@ If you need to automate this in a script:
 ### BATCH
 
 copy /y search.js html/search/search.js  
-echo ^<script id="searchdata" type="text/xmldata"^> >> html/search.html  
+echo ^<script id='searchdata' type='text/xmldata'^> >> html/search.html  
 type searchdata.xml >> html/search.html  
 echo ^</script^> >> html/search.html
 
 ### BASH
 
 cp search.js html/search/search.js  
-echo "<script id=\"searchdata\" type=\"text/xmldata\">" >> html/search.html  
+echo \"<script id=\'searchdata\' type=\'text/xmldata\'>\" >> html/search.html  
 cat searchdata.xml >> html/search.html  
-echo "</script>" >> html/search.html
+echo \"</script>\" >> html/search.html
